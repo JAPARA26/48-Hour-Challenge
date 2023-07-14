@@ -4,31 +4,47 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    public GameObject shopUI; // Reference to the shop UI canvas
-    [Header("Sprite To Change")]
-    public SpriteRenderer bodyPart;
-    [Header("Sprites to Cycle Through")]
-    public List<Sprite> options = new List<Sprite>();
+    // Define a data structure for each clothing option
+    [System.Serializable]
+    public class ClothingOption
+    {
+        public string name;
+        public Sprite sprite;
+        public int price;
+    }
 
-    private int CurrentOption = 0;
+    public GameObject shopUI; // Reference to the shop UI canvas
+    public SpriteRenderer bodyPart; // Reference to the sprite renderer of the body part
+    public List<ClothingOption> options = new List<ClothingOption>(); // List of clothing options
+
+    private int currentOption = 0;
+
+    private void Start()
+    {
+        // Set the initial sprite
+        SetOption(currentOption);
+    }
+
     public void NextOption()
     {
-        CurrentOption++;
-        if(CurrentOption >= options.Count)
+        currentOption++;
+        if (currentOption >= options.Count)
         {
-            CurrentOption = 0;
+            currentOption = 0;
         }
-        bodyPart.sprite = options[CurrentOption];
+        SetOption(currentOption);
     }
-    public void PreviusOption()
+
+    public void PreviousOption()
     {
-        CurrentOption--;
-        if (CurrentOption <= 0)
+        currentOption--;
+        if (currentOption <= 0)
         {
-            CurrentOption = options.Count -1;
+            currentOption = options.Count - 1;
         }
-        bodyPart.sprite = options[CurrentOption];
+        SetOption(currentOption);
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -36,5 +52,14 @@ public class Shop : MonoBehaviour
             // Enable the shop UI canvas when the player enters the trigger
             shopUI.SetActive(true);
         }
+    }
+
+    private void SetOption(int optionIndex)
+    {
+        ClothingOption option = options[optionIndex];
+        bodyPart.sprite = option.sprite;
+
+        // TODO: Update the UI to display the price of the current option
+        // You can access the price using option.price and update the shop UI accordingly
     }
 }
