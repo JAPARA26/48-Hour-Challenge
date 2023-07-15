@@ -62,7 +62,7 @@ public class Shop : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Enable the shop UI canvas when the player enters the trigger
-            shopUI.SetActive(true);
+            //shopUI.SetActive(true);
         }
     }
 

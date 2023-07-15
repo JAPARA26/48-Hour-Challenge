@@ -15,6 +15,10 @@ public class PlayerCon : MonoBehaviour
     private Animator animator = null;
     private bool isRotated = false;
     private bool isFacingRight = true;
+    public GameObject Box;
+    public GameObject Shop;
+    public bool nearshop = false;
+   
     private void Awake()
     {
         input = new CostumInput();
@@ -55,6 +59,34 @@ public class PlayerCon : MonoBehaviour
         {
             animator.SetBool("IsRunning", true);
         }
+
+        if (nearshop)
+        {
+            bool isSpaceKeyHeld = input.Player.Space.ReadValue<float>() > 0.1f;
+            if (isSpaceKeyHeld)
+            {
+                Shop.SetActive(true);
+            }
+        }
+        
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            Box.SetActive(true);
+            nearshop = true;
+        }
+       
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            Box.SetActive(false);
+            nearshop = false;
+        }
+
     }
     private void FixedUpdate()
     {

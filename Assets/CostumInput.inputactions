@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Space",
+                    "type": "PassThrough",
+                    "id": "ebc37f86-75b0-40bc-b82a-cf4fcc95d1cc",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -72,7 +81,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Arrow Keys",
+                    "name": "ArrowKeys",
                     "id": "141b4937-5831-45a8-844e-876c397f815b",
                     "path": "2DVector",
                     "interactions": "",
@@ -125,6 +134,17 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "da029bb9-279b-4a29-ad61-4ef5dc10f6b1",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Space",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
