@@ -14,7 +14,7 @@ public class Shop : MonoBehaviour
     }
     public void Update()
     {
-      //  Money.text = playerCoins.ToString();
+        LoadPlayerCoins();
     }
 
     public GameObject shopUI; // Reference to the shop UI canvas
@@ -35,9 +35,11 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.DeleteAll();
         // Set the initial sprite and price in the UI panel
         SetOption(currentOption);
     }
+  
 
     public void NextOption()
     {
@@ -93,7 +95,9 @@ public class Shop : MonoBehaviour
 
 
             // Update the UI to display the new balance of coins
+            SavePlayerCoins();
             UpdateCoinsUI();
+
 
            
         }
@@ -111,13 +115,14 @@ public class Shop : MonoBehaviour
         playerClothing.GetComponent<SpriteRenderer>().sprite = defaultSprite;
         playerClothing2.GetComponent<SpriteRenderer>().sprite = defaultSprite;
         playerClothing3.GetComponent<SpriteRenderer>().sprite = defaultSprite;
-        // Add 50 coins to the player's coins
-        playerCoins += 50;
-
+        // Add 100 coins to the player's coins
+        playerCoins += 100;
+        SavePlayerCoins();
         // Update the UI to display the new balance of coins
         UpdateCoinsUI();
         currentOption = 0;
         SetOption(currentOption);
+       
     }
 
     private void UpdateCoinsUI()
@@ -131,10 +136,12 @@ public class Shop : MonoBehaviour
         if (PlayerPrefs.HasKey("PlayerCoins"))
         {
             playerCoins = PlayerPrefs.GetInt("PlayerCoins");
+            SavePlayerCoins();
         }
         else
         {
             playerCoins = 100; // Default value if no saved data is found
+            SavePlayerCoins();
         }
     }
 
