@@ -21,7 +21,6 @@ public class Shop : MonoBehaviour
     public GameObject clothingOptionPanel; // Reference to the clothing option UI panel
     public Image clothingImage; // Reference to the image element for displaying the selected clothing
     public Text priceText; // Reference to the text element for displaying the price
-    //public Text Money;
     public TextMeshProUGUI Money;
 
     public List<ClothingOption> options = new List<ClothingOption>(); // List of clothing options
@@ -61,24 +60,13 @@ public class Shop : MonoBehaviour
         SetOption(currentOption);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            // Enable the shop UI canvas when the player enters the trigger
-            //shopUI.SetActive(true);
-        }
-    }
-
     private void SetOption(int optionIndex)
     {
         ClothingOption option = options[optionIndex];
 
         // Update the UI panel with the selected clothing option and its price
         clothingImage.sprite = option.sprite;
-        priceText.text = "Price: " + option.price.ToString();
-
-        
+        priceText.text = "Price: " + option.price.ToString();      
     }
 
     public void BuyClothing()
@@ -108,9 +96,7 @@ public class Shop : MonoBehaviour
     }
     public void SellClothing()
     {
-        // Reset the player's clothing to the default (optional)
-        // Replace the defaultSprite variable with the sprite of the default clothing.
-        Sprite defaultSprite = null; // Change this line with the default sprite.
+        Sprite defaultSprite = null; 
 
         playerClothing.GetComponent<SpriteRenderer>().sprite = defaultSprite;
         playerClothing2.GetComponent<SpriteRenderer>().sprite = defaultSprite;

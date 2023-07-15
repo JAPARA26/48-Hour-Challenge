@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class cameraManager : MonoBehaviour
 {
-
-    
-    #region Variable
     public float speed;
     public Transform player;
-    #endregion
-   
-    #region Function
+
 
     private void Start()
     {
@@ -43,5 +38,5 @@ public class cameraManager : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, player.position.y,-10), speed * Time.deltaTime);
         }
     }
-    #endregion
+
 }
