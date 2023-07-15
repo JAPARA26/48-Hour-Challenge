@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class Shop : MonoBehaviour
 {
     [System.Serializable]
@@ -9,15 +10,19 @@ public class Shop : MonoBehaviour
     {
         public string name;
         public Sprite sprite;
-        public int price;
+        public int price = 100;
+    }
+    public void Update()
+    {
+      //  Money.text = playerCoins.ToString();
     }
 
-    //public class ClothingShop : MonoBehaviour
-    //{
     public GameObject shopUI; // Reference to the shop UI canvas
     public GameObject clothingOptionPanel; // Reference to the clothing option UI panel
     public Image clothingImage; // Reference to the image element for displaying the selected clothing
     public Text priceText; // Reference to the text element for displaying the price
+    //public Text Money;
+    public TextMeshProUGUI Money;
 
     public List<ClothingOption> options = new List<ClothingOption>(); // List of clothing options
 
@@ -100,6 +105,6 @@ public class Shop : MonoBehaviour
         // Update the UI to display the new balance of coins
         // You can use a text element or any other UI element to show the player's coins.
         // For example:
-        // coinsText.text = "Coins: " + playerCoins.ToString();
+        Money.text =playerCoins.ToString();
     }
 }
