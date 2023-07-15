@@ -124,7 +124,7 @@ TextureImporter:
         width: 191
         height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,6 +132,48 @@ TextureImporter:
       bones: []
       spriteID: 0504fad2c2e53bb4aa7b150c3808cb7b
       internalID: 1227317741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall-2- 3 tiles tall_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 296
+        width: 34
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e25c130b870a56458cb4268e781de32
+      internalID: -1916778706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall-2- 3 tiles tall_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 296
+        width: 33
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51282e906516db54a9854ea053c80e6e
+      internalID: 905780408
       vertices: []
       indices: 
       edges: []
@@ -147,6 +189,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      wall-2- 3 tiles tall_2: 905780408
       wall-2- 3 tiles tall_1: -1916778706
       wall-2- 3 tiles tall_0: 1227317741
   spritePackingTag: 

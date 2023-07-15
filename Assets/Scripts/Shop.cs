@@ -28,6 +28,8 @@ public class Shop : MonoBehaviour
 
     public int playerCoins = 100; // Initial player coins
     public GameObject playerClothing; // Reference to the player's clothing object (e.g., a GameObject with a SpriteRenderer)
+    public GameObject playerClothing2;
+    public GameObject playerClothing3;
 
     private int currentOption = 0;
 
@@ -74,7 +76,7 @@ public class Shop : MonoBehaviour
         clothingImage.sprite = option.sprite;
         priceText.text = "Price: " + option.price.ToString();
 
-        // You can also add other information such as the name of the clothing option if needed.
+        
     }
 
     public void BuyClothing()
@@ -89,22 +91,56 @@ public class Shop : MonoBehaviour
             // Update the player's clothing object with the new sprite
             playerClothing.GetComponent<SpriteRenderer>().sprite = option.sprite;
 
+
             // Update the UI to display the new balance of coins
             UpdateCoinsUI();
 
-            // Optionally, you can save the player's clothing choice or apply it permanently here.
+           
         }
         else
         {
             Debug.Log("Not enough coins to buy this clothing option!");
         }
     }
+    public void SellClothing()
+    {
+        // Reset the player's clothing to the default (optional)
+        // Replace the defaultSprite variable with the sprite of the default clothing.
+        Sprite defaultSprite = null; // Change this line with the default sprite.
+
+        playerClothing.GetComponent<SpriteRenderer>().sprite = defaultSprite;
+        playerClothing2.GetComponent<SpriteRenderer>().sprite = defaultSprite;
+        playerClothing3.GetComponent<SpriteRenderer>().sprite = defaultSprite;
+        // Add 50 coins to the player's coins
+        playerCoins += 50;
+
+        // Update the UI to display the new balance of coins
+        UpdateCoinsUI();
+        currentOption = 0;
+        SetOption(currentOption);
+    }
 
     private void UpdateCoinsUI()
     {
         // Update the UI to display the new balance of coins
-        // You can use a text element or any other UI element to show the player's coins.
-        // For example:
         Money.text =playerCoins.ToString();
+    }
+
+    private void LoadPlayerCoins()
+    {
+        if (PlayerPrefs.HasKey("PlayerCoins"))
+        {
+            playerCoins = PlayerPrefs.GetInt("PlayerCoins");
+        }
+        else
+        {
+            playerCoins = 100; // Default value if no saved data is found
+        }
+    }
+
+    private void SavePlayerCoins()
+    {
+        PlayerPrefs.SetInt("PlayerCoins", playerCoins);
+        PlayerPrefs.Save();
     }
 }
