@@ -66,6 +66,7 @@ public class PlayerCon : MonoBehaviour
             if (isSpaceKeyHeld)
             {
                 Shop.SetActive(true);
+                nearshop = false;
             }
         }
         
