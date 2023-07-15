@@ -747,7 +747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 215dd6c48c732d744aecd29e7fecbbfa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -798,7 +798,6 @@ RectTransform:
   - {fileID: 1118918236}
   - {fileID: 1006043391}
   - {fileID: 144479778}
-  - {fileID: 1986484064}
   m_Father: {fileID: 3478481236834880102}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1770,7 +1769,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 564492143}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1570216244}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyClothing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &564492143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2019,6 +2030,13 @@ MonoBehaviour:
   - name: hood 4
     sprite: {fileID: 21300000, guid: 20eb058aea3c3a744bb5d47a1610550a, type: 3}
     price: 25
+  playerCoins: 100
+  playerClothing: {fileID: 1956284069}
+--- !u!1 &614027594 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6764302215960352887, guid: 1aa2d57ae0f06554cb640dfe7ac514aa, type: 3}
+  m_PrefabInstance: {fileID: 6763329701962554509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &646899164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,7 +2095,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 468244f274f38f64b85773c7888444b6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2266,7 +2284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -56.224, y: 46.60211}
+  m_AnchoredPosition: {x: -56.223938, y: 46.60211}
   m_SizeDelta: {x: 112.448, y: 236.1007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &820506524
@@ -2365,7 +2383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c376d5b80d02ffe4ba89fd03d60ec471, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2601,7 +2619,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 879617629}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1014520299}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyClothing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &879617629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3644,6 +3674,8 @@ MonoBehaviour:
   - name: torso 5
     sprite: {fileID: 21300000, guid: 250530d3e9754ed418009e3d539275b3, type: 3}
     price: 25
+  playerCoins: 100
+  playerClothing: {fileID: 1550533093}
 --- !u!1 &1028010567
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,6 +3939,8 @@ MonoBehaviour:
   clothingImage: {fileID: 0}
   priceText: {fileID: 0}
   options: []
+  playerCoins: 100
+  playerClothing: {fileID: 0}
 --- !u!224 &1069921612
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5883,6 +5917,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544663832}
   m_CullTransparentMesh: 1
+--- !u!1 &1550533093 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6764302216403670827, guid: 1aa2d57ae0f06554cb640dfe7ac514aa, type: 3}
+  m_PrefabInstance: {fileID: 6763329701962554509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1570216242
 GameObject:
   m_ObjectHideFlags: 0
@@ -5961,6 +6000,8 @@ MonoBehaviour:
   - name: pelvis 5
     sprite: {fileID: 21300000, guid: b1babcb6ce4ee78478abc5076a6d1b8d, type: 3}
     price: 40
+  playerCoins: 100
+  playerClothing: {fileID: 614027594}
 --- !u!1 &1631096321
 GameObject:
   m_ObjectHideFlags: 0
@@ -6155,7 +6196,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1685896530}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 604327230}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyClothing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1685896530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9119,82 +9172,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!224 &1986484064
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986484067}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 316742197}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195.00002, y: -20}
-  m_SizeDelta: {x: 30, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1986484065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986484067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2a4a90d47b10503499786d5a1fc77242, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!1 &1986484067
+--- !u!1 &1956284069 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6764302215023253495, guid: 1aa2d57ae0f06554cb640dfe7ac514aa, type: 3}
+  m_PrefabInstance: {fileID: 6763329701962554509}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1986484064}
-  - component: {fileID: 1986484078}
-  - component: {fileID: 1986484065}
-  m_Layer: 5
-  m_Name: Heart
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!222 &1986484078
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986484067}
-  m_CullTransparentMesh: 1
 --- !u!1 &2001132886
 GameObject:
   m_ObjectHideFlags: 0
